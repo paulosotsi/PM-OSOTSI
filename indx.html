@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>caculator</h1>
+        <input type="text" id="display" disabled>
+        <br>
+        <button value="1" onclick="addToDisplay('1')"> 1</button>
+        <button value="2" onclick="addToDisplay('2')"> 2</button>
+        <button value="3" onclick="addToDisplay('3')"> 3</button>
+        <br>
+        <button value="4" onclick="addToDisplay('4')"> 4</button>
+        <button value="5" onclick="addToDisplay('5')"> 5</button>
+        <button value="6" onclick="addToDisplay('6')"> 6</button>
+        <br>
+        <button value="7" onclick="addToDisplay('7')"> 7</button>
+        <button value="8" onclick="addToDisplay('8')"> 8</button>
+        <button value="9" onclick="addToDisplay('9')"> 9</button>
+        <br>
+        <button value="0" onclick="addToDisplay('0')"> 0</button>
+        <button value="=" onclick="calculate()"> =</button>
+        <button value="+" onclick="addToDisplay('+')"> +</button>
+        <br>
+        <button value="-" onclick="addToDisplay('-')"> -</button>
+        <button value="1" onclick="addToDisplay('/')"> /</button>
+        <button value="C" onclick="clearDisplay()"> C</button>
+        <button value="*" onclick="addToDisplay('*')"> *</button>
+</body>
+<script>
+function addToDisplay(value){
+    document.getElementById("display").value += value;
+}
+function clearDisplay(){ 
+    document.getElementById("display").value = ""
+}
+    function calculate(){
+        try{
+            var result = eval(document.getElementById("display").value)
+        document.getElementById("display").value = result;
+        }
+       //#endregion var result = eval(document.getElementById("display").value)
+      //#endregion  document.getElementById("display").value = result;
+    
+     catch(e){
+        document.getElementById("display").value = "Math error";
+     }
+    }
+
+</script>
+</html>
